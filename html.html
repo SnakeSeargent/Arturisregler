@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveM Server Regler</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e; /* Mørkt natte-tema baggrund */
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            position: relative; /* Positioner header relativt for at placere søgeknappen */
+        }
+        h1 {
+            color: #ff1e1e; /* Rød overskrift */
+            font-size: 3em;
+            margin: 0;
+        }
+        /* Opdateret stil til serverbanneret */
+        .server-banner {
+            width: 85%; /* 15% mindre end 100% */
+            max-width: 1000px; /* Maksimal bredde */
+            height: auto; /* Automatisk højde */
+            margin: 0 auto; /* Centrer banneret */
+            border-radius: 8px; /* Rundede hjørner */
+            margin-left: 15%; /* Juster margin til venstre for at flytte banneret til højre */
+            border-radius: 8px; /* Rundede hjørner */
+        }
+        .search-container {
+            position: absolute; /* Placer søgecontaineren i headeren */
+            top: 20px;
+            left: 20px;
+        }
+        .search-container input {
+            display: none; /* Skjul inputfeltet initialt */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+        }
+        .search-button {
+            background-color: #ff1e1e;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-button:hover {
+            background-color: #e60000;
+        }
+        .accordion {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .accordion-item {
+            background-color: #1a1a1a; /* Mørkere grå boks */
+            border: 2px solid #ff1e1e; /* Rød kant */
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 15px rgba(255, 30, 30, 0.5); /* Blød rød skygge */
+        }
+        .accordion-header {
+            background-color: #131313a4; /* Rød header */
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.5em;
+            text-align: left;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header:hover {
+            background-color: #6e0000;
+        }
+        .accordion-content {
+            background-color: #1a1a1a; /* Mørkere grå indholdsboks */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 15px;
+        }
+        .accordion-content p {
+            padding: 10px;
+            font-size: 1.1em;
+            text-align: left;
+        }
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #333;
+        }
+        footer p {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img class="server-banner" src="https://media.discordapp.net/attachments/1296240869845766204/1296256102031425616/Regliste.png?ex=6711a011&is=67104e91&hm=c5d749130680dd9174b9eff0b9c13a90b6e8262f3fff07c7641a4e408fabc029&=&format=webp&quality=lossless&width=1440&height=333" alt="Server Banner">
+    <h1></h1>
+</header>
+
+<section class="accordion">
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Basale Retningslinjer</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p1"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.1</strong><br>Det er vigtigt at i holder sig opdateret med reglerne på ARTURIS. Det er ikke en undskyldning.</p>
+
+            <p id="p2"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.2</strong><br>Adfærd, der skaber en negativ stemning i communitiet, kan resultere i en advarsel eller udelukkelse. Vi er her for at have det sjovt, så undgå diskrimination, personlige angreb, afsløring af personlige oplysninger, politiske emner eller ekstremisme.</p>
+            
+            <p id="p3"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.3</strong><br>Det er et krav at have en fungerende mikrofon for at kunne spille på serveren. Det er ikke tilladt tekstbaseret RP. Do/Me er dog tilladt. Voice changers er tilladt, men skal lyde realistisk og ikke som en robot.</p>
+            
+            <p id="p4"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.4</strong><br>Staff forbeholder sig retten til, at bruge regler, der ikke er specificeret i regelsættet, så længe det er til gavn for communitiet. spillerne eller for at mindske toxic adfærd.</p>
+            
+            <p id="p5"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.5</strong><br>Arturis RP staff forbeholder sig retten til at udvise spillerne uanset omstændighederne.</p>
+            
+            <p id="p6"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.6</strong><br>Brug af tredjeparts programmer eller modificeringer, der giver en unfair fordel, vil resultere i permanent udelukkelse. Dette gælder også for brug af VPN eller lignende. Medmindre en undtagelse er godkendt i en support ticket.</p>
+            
+            <p id="p7"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.7</strong><br>Udnytte spiller mekanikker til egen vinding kan resultere i udelukkelse.
+                <br>• Lave en animation midt i et skyde scenarie for at undgå at blive skudt.<br>• Annullere animation for at give en fordel.</p>
+            
+            <p id="p8"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.8</strong><br>Ved at spille på Arturis RP, forpligter spillerne sig til at rapportere fejl til udvikler Teamet. Udnyttelse af fejl kan resultere i permanent udelukkelse, uanset omfanget af udnyttelsen.</p>
+            
+            <p id="p9"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.9</strong><br>Sælge in-game ting for rigtige penge kan udføre udelukkelse.</p>
+            
+            <p id="p10"><strong style="font-size: 1.2em; color: #fc8b8b;">Regel 1.10</strong><br>Selvmords RP er ikke tilladt.</p>
+            
+        </div>
+    </div>
+    
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Rp og rollespils regler</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p1"><span class="regel-title" style="color: #fc8b8b;">Regel 2.1</span><br>Arturis er en RP server. Vi forventer, at spillerne RP’er i overensstemmelse med dette. Vi er ikke en Deathmatch, PVP eller GTA Online server.</p>
+    
+            <p id="p2"><span class="regel-title" style="color: #fc8b8b;">Regel 2.2</span><br>Vi forventer, at spillerne er imødekommende overfor hinanden og ikke afviser hinanden. Altid prøv at skabe en historie med andre spillere, som kan give en længere historie mellem karaktererne i fremtiden. Det er derfor ikke tilladt at starte konflikt uden tidligere kommunikation.</p>
+    
+            <p id="p3"><span class="regel-title" style="color: #fc8b8b;">Regel 2.3</span><br>Hvis du har en konflikt med en eller flere personer eller stridigheder med politiet, så undgå at dræbe dem med det samme. Vær RP-imødekommende og giv modparten plads til at svare.</p>
+    
+            <p id="p4"><span class="regel-title" style="color: #fc8b8b;">Regel 2.4</span><br>Hvis en mindre regel er blevet brudt, og begge parter er enige i, at regelbruddet gjorde RP’et bedre, er det muligt, at ingen straf vil blive givet.</p>
+        </div>
+    </div>
+    
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Karakter opbygning og historie</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p1"><span class="regel-title" style="color: #fc8b8b;">Regel 3.1</span><br>Din karakter skal have et realistisk navn. Det er ikke tilladt at bruge navne fra kendte fiktive eller faktiske personer.</p>
+    
+            <p id="p2"><span class="regel-title" style="color: #fc8b8b;">Regel 3.2</span><br>Du må ikke bringe historier fra andre servere til Arturis RP. Din historie skal være unik fra start af.</p>
+    
+            <p id="p3"><span class="regel-title" style="color: #fc8b8b;">Regel 3.3</span><br>Det er ikke tilladt at give sine ting væk til andre spillere, fordi man lever serveren.</p>
+    
+            <p id="p4"><span class="regel-title" style="color: #fc8b8b;">Regel 3.4</span><br>Du skal være tro mod din karakters personlighed og historie i hele RP-oplevelsen på Arturis.<br>
+            • Det betyder, at man ikke bare skifter gruppering til højre og venstre, uden at det er relevant for din karakter. Du kan godt udvikle din karakter mod nye eventyr, men det kræver tid og ikke noget, du gør fra dag til dag.</p>
+    
+            <p id="p5"><span class="regel-title" style="color: #fc8b8b;">Regel 3.5</span><br>Du skal være villig til at character Kill (CK) din karakter, hvis RP’en kræver det.<br>
+            Vi forventer, at RP-spillere sætter pris på sin karakters historie og udvikling, frem for materielle ting, som man kan miste ved et CK.</p>
+        </div>
+    </div>
+    
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Out of character Snak.</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p6"><span class="regel-title">Regel 3.6</span><br>Man skal forblive i karakter under hele sin RP-oplevelse. Det betyder, at man ikke skal kommentere på OOC-relaterede oplysninger.</p>
+
+            <p id="p7"><span class="regel-title">Regel 3.7</span><br>OOC-snak, som bidrager til RP’en, er tilladt, men det skal holdes på et minimum for at sikre, at den immersive oplevelse opretholdes.</p>
+            
+        </div>
+    </div>
+    
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>RDM, VDM, MOS.</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p1"><span class="regel-title" style="color: #fc8b8b;">Regel 4.1</span><br>Du kan ikke dræbe en anden karakter uden RP forinden. RP forinden gælder i det aktive scenarie, at selvom I har haft kontroverser i går, så samler I RP’en op før der kommer et drab.</p>
+    
+            <p id="p2"><span class="regel-title" style="color: #fc8b8b;">Regel 4.2</span><br>Terrorist RP er ikke tilladt. Terrorist RP involverer at man dræber for at skræmme andre.</p>
+    
+            <p id="p3"><span class="regel-title" style="color: #fc8b8b;">Regel 4.3</span><br>Dræb skal være absolut sidste udvej og ikke det første valg. Det er vigtigt at undersøge og prøve alle mulige løsninger, før man dræber en anden karakter. At dræbe en karakter i RP (selvom det ikke er CK) er en af de største RP-dræbere.</p>
+        </div>
+    </div>
+    
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Powergaming & Realisme</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p1"><span class="regel-title" style="color: #fc8b8b;">Regel 5.1</span><br>Dit RP skal være realistisk gennem hele din tid på ARTURIS RP.</p>
+    
+            <p id="p2"><span class="regel-title" style="color: #fc8b8b;">Regel 5.2</span><br>Du skal give andre spillere mulighed for at reagere på dit RP. Det er ikke tilladt at tvinge RP ned over andre, bare fordi de er langsomme til at reagere.</p>
+    
+            <p id="p3"><span class="regel-title" style="color: #fc8b8b;">Regel 5.3</span><br>Du kan ikke opfinde ting, der aldrig er sket på serveren, eller RP dig frem til ting, som ikke er en mulighed via scripts eller menneskelige evner for at få en unfair fordel.</p>
+    
+            <p id="p4"><span class="regel-title" style="color: #fc8b8b;">Regel 5.4</span><br>Du skal køre på en måde, som er realistisk for dit køretøj. Det betyder, at bare fordi du har et off-road køretøj, kan det ikke køre op af en 90 graders stigning.</p>
+    
+            <p id="p5"><span class="regel-title" style="color: #fc8b8b;">Regel 5.5</span><br>Folk, der har maske på, kan ikke genkende deres stemmer. Der kan eller ikke genkendes stemmer over radioen.</p>
+    
+            <p id="p6"><span class="regel-title" style="color: #fc8b8b;">Regel 5.6</span><br>Det er ikke tilladt at tale, mens man er bevidstløs eller død. Der er dog tilladt at lave lyde, som bidrager til RP’en.</p>
+    
+            <p id="p7"><span class="regel-title" style="color: #fc8b8b;">Regel 5.7</span><br>Man må ikke bede om urealistiske beløb for gidsler eller lignende fra politiet. Husk din fear RP overfor politiet, så de er villige til at imødekomme dine forhandlinger.</p>
+    
+            <p id="p8"><span class="regel-title" style="color: #fc8b8b;">Regel 5.8</span><br>Politistationer og hospitaler skal RP’es realistisk. Det indebærer, at man opfører sig ansvarligt og professionelt i et hospital. Det er også vigtigt at huske, at der altid vil være betjente til stede på en politistation, så man skal undlade at tage konfronterende handlinger mod politiet.</p>
+    
+            <p id="p9"><span class="regel-title" style="color: #fc8b8b;">Regel 5.9</span><br>Selvom et køretøj ikke har en visuel nummerplade, så er alle køretøjer udstyret med en nummerplade. Hvis den ikke er synlig, skal man RP sig til, at den er der.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Skader og læge RP</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p10"><span class="regel-title" style="color: #fc8b8b;">Regel 5.10</span><br>Du skal RP efter dine skader og hvad der er sket med din karakter under dit RP. Der kan være tilfælde, hvor man kan miste liv, selvom man reelt ikke burde miste liv, da vi spiller et spil. Derfor er det acceptabelt at vælge ikke at RP på det.</p>
+        
+            <p id="p11"><span class="regel-title" style="color: #fc8b8b;">Regel 5.11</span><br>Selvom du bliver skudt, forventer vi, at du RP’er realistisk. Adrenalin osv. kan spille en rolle, men din karakter er ramt af skud, og du skal RP efter det. Det betyder også, at under alle omstændigheder, skal du benytte dig af et hospital eller læge RP efter at være blevet skudt.</p>
+        
+            <p id="p12"><span class="regel-title" style="color: #fc8b8b;">Regel 5.12</span><br>Du skal RP realistisk i læge RP og ikke kun tænke på, hvad der er bedst for dig, for at komme hurtigere videre. Der skal RP’es i dybden med lægen, og lægen bestemmer størstedelen af RP’en.</p>
+        
+            <p id="p13"><span class="regel-title" style="color: #fc8b8b;">Regel 5.13</span><br>Læger skal ALTID RP realistisk for modpartens skader. Det betyder, at man ikke bare skal bruge et medkit og hurtigt vider.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Not Valuing Life (NVL)</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p14"><span class="regel-title" style="color: #fc8b8b;">Regel 6.1</span><br>Din karakter skal altid have passende Fear RP over for andre spillere, grupperinger og politiet. Det betyder ikke, at din karakter ikke kan tage chancer. Men hvis din karakter dør som følge af at tage chancen, kan karakteren blive CK’et.</p>
+        
+            <p id="p15"><span class="regel-title" style="color: #fc8b8b;">Regel 6.2</span><br>Ved Fear RP, hvor en anden karakter tager en chance, kan spillere ansøge om CK på karakteren. Men karakteren skal dø, før kriterierne vil blive opfyldt. Der kræves video for at få godkendt et CK i denne situation.</p>
+        
+            <p id="p16"><span class="regel-title" style="color: #fc8b8b;">Regel 6.3</span><br>NVL/Fear RP er så udbredt, at hver sag vil blive vurderet individuelt baseret på RP’en, der har ført op til situationen, og hvad hensigten var med at sætte en karakter i fare.</p>
+        
+            <p id="p17"><span class="regel-title" style="color: #fc8b8b;">Regel 6.4</span><br>Hvis en karakter blander sig i bankrøverier, bandekonflikt, scenarier mellem bander og politiet, uden at have noget at gøre med RP-scenariet, vil det blive betragtet som at sætte sit liv unødvendig i fare.</p>
+        
+            <p id="p18"><span class="regel-title" style="color: #fc8b8b;">Regel 6.5</span><br>Have respekt for andres liv. Det betyder, at man ikke bare skyder, dræber folk pga. bagtaleri. Vi forventer, at man har respekt for andre karakterer, så man sætter ikke andre karakterer unødvendig i fare.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>New Life Rule (NLR)</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p19"><span class="regel-title" style="color: #fc8b8b;">Regel 7.1</span><br>Hvis du respawn manuelt, vil du ikke kunne huske, hvad der er sket i RP-scenariet, som er ledt op til din bevidstløshed. Du vil ej heller huske, hvad der er sket, imens du har været bevidstløs.</p>
+        
+            <p id="p20"><span class="regel-title" style="color: #fc8b8b;">Regel 7.2</span><br>Hvis du bliver genoplivet, vil du kunne huske alt, hvad der har ledt op til RP’en. Du vil dog ikke huske, hvad der er sket, imens du var bevidstløs.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Metagaming</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p21"><span class="regel-title" style="color: #fc8b8b;">Regel 8.1</span><br>Det er ikke tilladt at tage informationer udefra spillet med ind.</p>
+        
+            <p id="p22"><span class="regel-title" style="color: #fc8b8b;">Regel 8.2</span><br>Regel 8.1 kan blive tilladt, hvis man får det godkendt i supporten med relevans for informationen.</p>
+        
+            <p id="p23"><span class="regel-title" style="color: #fc8b8b;">Regel 8.3</span><br>Det er forbudt at se streams, mens du selv er ingame på serveren. Der er ingen undtagelse for dette. RP, mens du er inde på serveren.</p>
+        
+            <p id="p24"><span class="regel-title" style="color: #fc8b8b;">Regel 8.4</span><br>Alt indhold på telefonen skal have RP-relevans. Dette gælder alt, også baggrunde og tekstsamtaler.</p>
+        
+            <p id="p25"><span class="regel-title" style="color: #fc8b8b;">Regel 8.5</span><br>Det er ikke muligt at få testamenter håndhævet, da det kun kan ske ved brug af meta eller abnorme karakterhandlinger, som vil resultere i en hård straf fra supporten. Du kan stadig lave testamenter i RP, men det kan ikke bruges til at flytte ejendom, penge mellem karakterer eller lign.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Regler for Whitelisted jobs</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p26"><span class="regel-title" style="color: #fc8b8b;">Regel 9.1</span><br>Du må ikke udlevere job specifikke items. (Gælder kun EMS og Politiet)</p>
+        
+            <p id="p27"><span class="regel-title" style="color: #fc8b8b;">Regel 9.2</span><br>Man kan tvangsfyres af politiet, hvis man bliver taget i noget kriminelt.</p>
+        
+            <p id="p28"><span class="regel-title" style="color: #fc8b8b;">Regel 9.3</span><br>Korruption er lovligt, hvis det bidrager til RP’en og ikke lukker ned for folks hårde arbejde! Dette er virkeligt et svært emne, så virkelig læg en laaaang plan for det, og det skal ikke ske spontant.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Røverier</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p29"><span class="regel-title" style="color: #fc8b8b;">Regel 10.1</span><br>Røverier er tilladt, Røverier skal laves for RP’en. Det vil sige, man ikke bare røver folk, uden at modparten har en idé om, hvem du er, og hvordan de skal kunne give dig noget RP igen. Husk at være opmærksom i RP-scenariet, du behøver ikke få det serveret på et sølvfad.<br><br>Du skal ikke ruinere folk. Så du skal ikke tage alt, hvad de ejer. Husk at vi spiller RP for at have det sjovt.</p>
+        
+            <p id="p30"><span class="regel-title" style="color: #fc8b8b;">Regel 10.2</span><br>Der må ikke tages Whitelisted job items, såsom Politi items, EMS items osv.</p>
+        
+            <p id="p31"><span class="regel-title" style="color: #fc8b8b;">Regel 10.3</span><br>Der må maksimalt være 8 medlemmer til et nationalbankrøveri og 6 medlemmer til de andre bankrøverier.</p>
+        
+            <p id="p32"><span class="regel-title" style="color: #fc8b8b;">Regel 10.4</span><br>Der må maksimalt være 6 medlemmer til et butiksrøveri.</p>
+        
+            <p id="p33"><span class="regel-title" style="color: #fc8b8b;">Regel 10.5</span><br>Der må maksimalt være 8 medlemmer til juvelrøveri.</p>
+        
+            <p id="p34"><span class="regel-title" style="color: #fc8b8b;">Regel 10.6</span><br>Forhandlingerne skal være realistiske fra begge sider af røveriet.<br>
+            . Der må ikke forventes tjenestekøretøjer/fly under forhandlingerne.<br>
+            . Der må ikke forventes tjenestevåben/udstyr under forhandlingerne.</p>
+        
+            <p id="p35"><span class="regel-title" style="color: #fc8b8b;">Regel 10.7</span><br>Røverier skal foregå så realistisk som muligt, også intentionen til hvorfor man ønsker at lave røveriet.<br>Derfor skal røverier ikke laves af kedsomhed, men fordi det giver mening for din karakter.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Gidseltagning. Både for Politiet og Bander</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p36"><span class="regel-title" style="color: #fc8b8b;">Regel 11.1</span><br>Gidsler skal have det sjovt under hele gidseltagningen. De skal integreres med i RP-scenariet, og ikke bare sidde AFK.</p>
+        
+            <p id="p37"><span class="regel-title" style="color: #fc8b8b;">Regel 11.2</span><br>Vilkårligt, hvilken gidseltagning der foregår, forventes der altid, at der bliver forhandlet.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Diverse Regler</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p38"><span class="regel-title" style="color: #fc8b8b;">Regel 12.1</span><br>Combatlogging er ikke tilladt, og RP skal afsluttes inden aflogning. Efter RP-scenarier forventes det, at man bliver de ekstra 15 minutter inden på serveren, inden man logger af. Brud på dette kan medføre udelukkelse.</p>
+        
+            <p id="p39"><span class="regel-title" style="color: #fc8b8b;">Regel 12.2</span><br>Har en bygning et Walk in Interior eller MLO, så er man påkrævet at sælge det igennem en ejendomsmægler - (Huse vurderes uden MLO, da MLO’et i sig selv ikke har en værdi).</p>
+        
+            <p id="p40"><span class="regel-title" style="color: #fc8b8b;">Regel 12.3</span><br>Ved ejerskab af et Walk In Interior eller MLO, er man påkrævet at bruge det aktivt. Grundet begrænset udbud af disse bygninger, vil disse bygninger ved inaktivitet blive sat tilbage på markedet.</p>
+        
+            <p id="p41"><span class="regel-title" style="color: #fc8b8b;">Regel 12.4</span><br>TP In Huse (IPL) skal sælges til realistiske priser.</p>
+        
+            <p id="p42"><span class="regel-title" style="color: #fc8b8b;">Regel 12.5 - Voldtægts RP</span><br>.<br>Dette er slet ikke tilladt, medmindre begge parter er enige om det.<br>. Husk nu, hvem der sidder på den anden ende af skærmen.</p>
+        
+            <p id="p43"><span class="regel-title" style="color: #fc8b8b;">Regel 12.6</span><br>Det er tilladt at give politiet modstand under ransagninger, dog er der nogle regler ved at gøre dette. Hvis man bliver dræbt af politiet i ransagningsregi, er det ikke tilladt at deltage i resten af ransagningen. Dette gælder også, hvis ransagningen varer flere dage.<br><br>Eksempel:<br>. Hvis Jens Peter bliver ransaget, og The Lost vælger at tage kampen op imod politiet for at redde alle sine våben. Peter Hansen bliver dræbt under forsøget på at forpurre ransagningen, dog har han forstyrret politiet så meget, at de vælger at udsætte det til dagen efter. Her vil det ikke være lovligt for Peter Hansen at deltage igen, selvom det er dagen efter.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Firma Regler</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p44"><span class="regel-title" style="color: #fc8b8b;">Regel 13.1</span><br>Bliver man banned i 14 dage eller længere, kan man miste ejerskab over sin virksomhed samt muligheden for, at virksomheden ryger på tvangsauktion.</p>
+        
+            <p id="p45"><span class="regel-title" style="color: #fc8b8b;">Regel 13.2</span><br>Generelle ændringer til firmaet skal godkendes ved firmaansvarlige, såsom salg/ejerskifte, bonussystem, omsætning eller andet. (Man skal opdatere firmaansvarlige ved virksomhedens ændring).</p>
+        
+            <p id="p46"><span class="regel-title" style="color: #fc8b8b;">Regel 13.3</span><br>Lovlige og whitelistede jobs må ikke misbruges til at fremme ulovlige hensigter. Dette vil blive set som umotiveret korruption. Der kan dog forekomme særregler for bander, der ejer virksomheden.</p>
+        
+            <p id="p47"><span class="regel-title" style="color: #fc8b8b;">Regel 13.4</span><br>Ens firmaansøgning skal holdes opdateret med alle relevante informationer såsom medarbejderliste, ejerskab etc. Som ejer er det særlig vigtigt, der står discord (med tag), steam og in-game vane på ansøgningen, og at dette holdes opdateret.</p>
+        
+            <p id="p48"><span class="regel-title" style="color: #fc8b8b;">Regel 13.5</span><br>Bliver virksomheden godkendt, forventes det, at virksomheden skal være spillernes main-karakter, samt at der lægges vægt på den karakter over andre.</p>
+        
+            <p id="p49"><span class="regel-title" style="color: #fc8b8b;">Regel 13.6</span><br>Bliver en virksomhed overdraget gratis til en spiller, og spilleren sælger den videre, vil firmaansvarlige vurdere, hvor meget spilleren har fortjent at få for virksomheden - her vil der blive kigget på aktivitet, indsats, salgspris og andet.</p>
+        
+            <p id="p50"><span class="regel-title" style="color: #fc8b8b;">Regel 13.7</span><br>Bliver man som virksomhedsejer taget i grov kriminalitet, har politiet og advokathuset retten til at fratage dig virksomheden fra ejeren - dette gøres udelukkende i RP.</p>
+        
+            <p id="p51"><span class="regel-title" style="color: #fc8b8b;">Regel 13.8</span><br>Stråmænd er noget, vi accepterer på serveren, dog er det en ting, som firmaansvarlige skal indberettes med, hvis det skulle ske, at man har en eller flere stråmænd for sin virksomhed.<br><br>Regelbrud kan ende ud i, at firmaet bliver fjernet.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Bande Regler</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p52"><span class="regel-title" style="color: #fc8b8b;">Regel 14.1</span><br>- Banderne må max have 18 medlemmer.<br>- Grupperinger må max have 10 medlemmer.<br><br>Hangaround tæller ikke med som medlemmer, dog må de ikke være med i aktivt bandeRP. Hvis Hangaround passivt bliver involveret i et bandescenarie, er det acceptabelt. F.eks. hvis de holder fest i klubben, og en anden bande rusher dem, må de selvfølgelig forsvare sig.</p>
+        
+            <p id="p53"><span class="regel-title" style="color: #fc8b8b;">Regel 14.2</span><br>Man må i hver bande have Pusher, som ikke tæller med som bandemedlem.<br>Pusher må ikke deltage i bandeRP med andre bander. RP’en skal foregå internt i banden.</p>
+        
+            <p id="p54"><span class="regel-title" style="color: #fc8b8b;">Regel 14.3</span><br>Bander må max have en alliance med 1 anden bande/gruppering.<br>- Altså 18+18 = max 36 mand til scenarie.<br>- Alliance betyder: have en fælles interesse over en længere periode.<br>- Samarbejde med flere bander er tilladt, hvis det er kortsigtet i interesse og muligvis kun indblanding af 1-2 scenarier.</p>
+        
+            <p id="p55"><span class="regel-title" style="color: #fc8b8b;">Regel 14.4</span><br>Det er forbudt for grupperinger at have væbnet samarbejde/alliance med andre grupperinger.</p>
+        
+            <p id="p56"><span class="regel-title" style="color: #fc8b8b;">Regel 14.5</span><br>Hvis man har interne planer om at videregive banden/ledelsen til en anden, skal denne nye boss godkendes af en bandeansvarlig.</p>
+        
+            <p id="p57"><span class="regel-title" style="color: #fc8b8b;">Regel 14.6</span><br>Hvis man ikke følger sin bandeansøgning, kan det udløse en bande strike eller andre konsekvenser.</p>
+        
+            <p id="p58"><span class="regel-title" style="color: #fc8b8b;">Regel 14.7</span><br>Ved bande/grupperings skifte eller lukning af bande/gruppering, vil man blive underlagt en 14 dages cooldown, hvor man ikke må indblandes i banderp på anden vis end ved at lave pusher arbejde.</p>
+        </div>        
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Bande Strike System</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p59"><span class="regel-title" style="color: #fc8b8b;">Regel 14.8</span><br>Banderne vil fungere under en såkaldt: 3 strike-regel.<br><br>- Strike-one:<br>- Strike-Two:<br>- Strike-Three: Banden vil blive taget ned af en staff, og foregår der yderligere bande relaterede ting fra en nedtaget bande, vil dette medføre et ban.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Diverse bande Regler</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p60"><span class="regel-title" style="color: #fc8b8b;">Regel 14.9</span><br>Tilsidesætte eget gruppering medlem liv, giver fremover et strike.<br><br>- Eks. et gruppering medlem er taget som gidsel, i vælger at være ligeglade og prøver at eliminere modparten, der ved tilsidesætter jeres gruppering medlem liv (Teoretisk CK), da i er ligeglade med om personen overlever.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">
+            <span>Bandekrige Regler</span>
+        </div>
+        <div class="accordion-content">
+            <p id="p61"><span class="regel-title" style="color: #fc8b8b;">Regel 15.1</span><br>Bandekrige skal følge et enkelt, fastlagt system.<br><br>For at starte en bandekrig skal der sendes en officiel meddelelse til support, hvor grunden til konflikten vil blive vurderet af en bande ansvarlig. Hvis grunden til krigen bedømmes som utilstrækkelig, vil anmodningen om krigen blive afvist. De involverede parter vil blive opfordret til at forsætte RP’en uden officiel krig, indtil grundlaget er tilstrækkeligt eller der findes en intern løsning.<br><br>Hvis grunden til krigen bliver godkendt, vil begge parter officielt være i bandekrig.<br><br>Når en bandekrig officielt begynder, vil følgende procedure finde sted:<br>Krigen vil vare i 3 dage. Efter disse 3 dage, vil der være en forhandlingsperiode på 3 dage.<br>Hvis der ikke opnås en aftale inden for denne periode, vil krigsperioden forsætte med yderligere 3 dage.<br><br>Hvis begge parter er enige, kan krigen eskalere til en CK krig. Dette skal dog være et fælles ønske fra begge sider. Tøjet som banderne bærer, for at vise man er den del af krigen eller ej, vil blive aftalt internt efter godkendelse.</p>
+
+            <p id="p62"><span class="regel-title" style="color: #fc8b8b;">Regel 15.2</span><br>Hvert medlem af banden har 1 liv per dag under en krig. Det betyder, at hvis krigen begynder kl. 12:00 og du dør indenfor de næste 24 timer, vil din karakter betragtes som permanent dræbt indtil timeren nulstilles - det vil sige kl. 12:00 den følgende dag. Starttidspunktet vil blive bestemt internt af supporten, når krigen begynder.</p>
+            
+            <p id="p63"><span class="regel-title" style="color: #fc8b8b;">Regel 15.3</span><br>Målet for at vinde en bandekrig vil blive fastlagt i supporten, når krigen bliver officielt. Begge parter vil blive bedt om at blive enige om, hvad der skal til for at vinde krigen. Hvis parterne ikke kan nå til enighed, vil staff fastsætte sejrs kriteriet baseret på den oprindelige grund til krigen.<br><br>Dette kan være forskellige eksempler:<br>• Den første bande der opnår et bestemt antal kills.<br>• Den bande, der kontrollerer et specifikt territorium, når krigen er slut.<br>• Den bande, der har forårsaget mest økonomisk skade på modstanderen. (Dette kan inkludere røverier og lignende handlinger).</p>
+            
+            <p id="p64"><span class="regel-title" style="color: #fc8b8b;">Regel 15.4</span><br>Hvis en bande fuldstændig bliver udryddet (alle medlemmer af banden dør), vil den pågældende bande automatisk blive erklæret som taber. I bandekrigen skal NLR respekteres, og der skal være medlemmer til stede, som kan huske udfaldet af konflikten.<br><br>Hvordan dette opnås kan variere fra bande til bande. For at sikre dette vil staff kræve, at begge bander indsender en komplet liste over deres aktive medlemmer før, og efter scenariet.<br><br>Eksempel:<br>Hvis der er 16 medlemmer af din bande online på serveren, skal du indsende denne liste til Staff. Hvis alle 16 medlemmer dør i et scenarie, har din bande tabt. Der skal være et eller flere bandemedlemmer i live efter scenariet, som kan huske hændelsesforløbet.</p>
+            
+            <p id="p65"><span class="regel-title" style="color: #fc8b8b;">Regel 15.5</span><br>Hvis der ikke er erklæret officiel bandekrig, godkendt af supporten, er Kill On Sight Deathmatch og lignende PVP-handlinger strengt forbudt. Hvis en bande eller flere bander engagerer sig i disse handlinger i stedet for at fokusere på RP, vil den pågældende bande modtage en strike.</p>
+            
+            <p id="p66"><span class="regel-title" style="color: #fc8b8b;">Regel 15.6</span><br>Rekruttering i forbindelse med officiel krig er streng forbudt under selve krigen. Det er dog tilladt enten før krigen officielt erklæres eller efter den er afsluttet.</p>
+            
+            <p id="p67"><span class="regel-title" style="color: #fc8b8b;">Regel 15.7</span><br>Efter krigen er overgået til at være officiel krig, så skal den meldes ingame face-to-face, og ikke over andre kommunikationsformer.</p>
+            
+            <p id="p68"><span class="regel-title" style="color: #fc8b8b;">Regel 15.8</span><br>Vi forventer at banderne involveret i konflikter/krige bibeholder deres vante Fear RP og giver op i en evt. konflikt sådan det passer til RP’en.</p>            
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2024 ARTURIS Server. Alle rettigheder forbeholdes Ramizz som kreatør og skaber af denne side.</p>
+</footer>
+
+<script>
+    // JavaScript til accordion effekt
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const maxHeight = content.style.maxHeight;
+            
+            // Luk andre åbne bokse
+            document.querySelectorAll('.accordion-content').forEach(c => {
+                c.style.maxHeight = null;
+            });
+            
+            // Skift mellem at åbne og lukke boksen
+            if (maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
